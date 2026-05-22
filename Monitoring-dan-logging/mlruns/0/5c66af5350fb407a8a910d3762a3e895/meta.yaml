@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/Pongo/Downloads/subs-akhi/Monitoring-dan-logging/mlruns/0/5c66af5350fb407a8a910d3762a3e895/artifacts
+end_time: 1750320790861
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5c66af5350fb407a8a910d3762a3e895
+run_name: capable-fish-822
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750320786037
+status: 3
+tags: []
+user_id: Pongo

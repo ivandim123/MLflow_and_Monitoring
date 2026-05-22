@@ -1,0 +1,84 @@
+groups:
+  - name: ml_service_alerts
+    rules:
+      # ML Service Down
+      - alert: MLServiceDown
+        expr: ml_service_up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "ML Service is down"
+          description: "ML service has been down for more than 1 minute"
+
+      # High Error Rate
+      - alert: HighErrorRate
+        expr: rate(ml_prediction_errors[5m]) > 0.1
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High ML prediction error rate"
+          description: "ML prediction error rate is {{ $value }} errors per second"
+
+      # High Response Time
+      - alert: HighResponseTime
+        expr: ml_service_response_time_seconds > 1.0
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High ML service response time"
+          description: "ML service response time is {{ $value }} seconds"
+
+      # Low Model Accuracy
+      - alert: LowModelAccuracy
+        expr: ml_model_accuracy < 0.7
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "ML model accuracy is low"
+          description: "Model accuracy has dropped to {{ $value }}"
+
+      # Data Drift Detected
+      - alert: DataDriftDetected
+        expr: ml_data_drift_score > 0.5
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Data drift detected"
+          description: "Data drift score is {{ $value }}, indicating possible distribution shift"
+
+  - name: system_alerts
+    rules:
+      # High CPU Usage
+      - alert: HighCPUUsage
+        expr: system_cpu_usage_percent > 80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU usage"
+          description: "CPU usage is {{ $value }}%"
+
+      # High Memory Usage
+      - alert: HighMemoryUsage
+        expr: system_memory_usage_percent > 85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High memory usage"
+          description: "Memory usage is {{ $value }}%"
+
+      # High Disk Usage
+      - alert: HighDiskUsage
+        expr: system_disk_usage_percent > 90
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High disk usage"
+          description: "Disk usage is {{ $value }}%"

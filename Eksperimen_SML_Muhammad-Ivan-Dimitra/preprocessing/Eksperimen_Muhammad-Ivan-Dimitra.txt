@@ -1,0 +1,23 @@
+Link github preprocessing: https://github.com/ivandim123/MSML/tree/main/Eksperimen_SML_Muhammad-Ivan-Dimitra/preprocessing
+
+Tahapan Preprocessing pada Dataset Statlog Heart Disease
+
+Berdasarkan analisis Exploratory Data Analysis (EDA) dan kebutuhan untuk mempersiapkan data sebelum pemodelan, tahapan preprocessing berikut telah dilakukan:
+
+1.  Penanganan Missing Values dan Duplikasi Data:
+    * Dataset diperiksa untuk keberadaan missing values (nilai yang hilang) dan data duplikat.
+    * Ditemukan bahwa dataset ini **tidak memiliki missing values** dan **tidak ada data duplikat**. Oleh karena itu, tidak ada tindakan khusus yang diperlukan untuk tahapan ini.
+
+2.  Penanganan Outlier (Capping):
+    * Outlier pada fitur-fitur numerik ('trestbps', 'chol', 'thalach', 'oldpeak') diatasi menggunakan metode **capping** berbasis Interquartile Range (IQR).
+    * Batas bawah (lower_cap) dihitung sebagai Q1 - 1.5 * IQR.
+    * Batas atas (upper_cap) dihitung sebagai Q3 + 1.5 * IQR.
+    * Nilai yang berada di bawah lower_cap diganti dengan lower_cap, dan nilai yang berada di atas upper_cap diganti dengan upper_cap.
+    * Fitur-fitur lain yang bersifat kategorikal atau yang distribusinya tidak menunjukkan outlier signifikan tidak diubah pada tahap ini.
+
+3.  Standardisasi Fitur Numerik:
+    * Fitur-fitur numerik yang memiliki banyak nilai unik (yaitu, distribusinya digambarkan dengan histogram/density plot, bukan countplot) distandardisasi. Fitur-fitur ini meliputi 'age', 'trestbps', 'chol', 'thalach', dan 'oldpeak'.
+    * Metode yang digunakan adalah **StandardScaler**, yang mentransformasi data sehingga memiliki rata-rata 0 dan standar deviasi 1 (z-score normalization).
+    * Standardisasi ini penting agar fitur-fitur numerik memiliki skala yang seragam, mencegah fitur dengan rentang nilai yang besar mendominasi proses pembelajaran model.
+
+Hasil dari tahapan preprocessing ini adalah dataframe baru yang disimpan sebagai 'HDS_preprocessing.csv', siap untuk tahap analisis atau pemodelan selanjutnya.

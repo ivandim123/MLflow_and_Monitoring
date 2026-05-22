@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/Pongo/Downloads/subs-akhi/Membangun_model/mlruns/0/models/m-173db84f20754eddb93d0eff9dddc12a/artifacts
+creation_timestamp: 1749820129715
+experiment_id: '0'
+last_updated_timestamp: 1749820133019
+model_id: m-173db84f20754eddb93d0eff9dddc12a
+model_type: null
+name: model
+source_run_id: e7c55df28a384f3c9007de53da6b76d8
+status: 2
+status_message: null

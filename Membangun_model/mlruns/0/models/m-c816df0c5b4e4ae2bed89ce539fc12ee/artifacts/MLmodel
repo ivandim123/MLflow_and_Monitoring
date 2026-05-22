@@ -1,0 +1,36 @@
+artifact_path: file:///C:/Users/Pongo/Downloads/subs-akhi/Membangun_model/mlruns/0/models/m-c816df0c5b4e4ae2bed89ce539fc12ee/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.9
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+is_signature_from_type_hint: false
+mlflow_version: 3.1.0
+model_id: m-c816df0c5b4e4ae2bed89ce539fc12ee
+model_size_bytes: 648293
+model_uuid: m-c816df0c5b4e4ae2bed89ce539fc12ee
+prompts: null
+run_id: e244591771fe454cb3288b290855924e
+signature:
+  inputs: '[{"type": "double", "name": "age", "required": true}, {"type": "long",
+    "name": "sex", "required": true}, {"type": "long", "name": "cp", "required": true},
+    {"type": "double", "name": "trestbps", "required": true}, {"type": "double", "name":
+    "chol", "required": true}, {"type": "long", "name": "fbs", "required": true},
+    {"type": "long", "name": "restecg", "required": true}, {"type": "double", "name":
+    "thalach", "required": true}, {"type": "long", "name": "exang", "required": true},
+    {"type": "double", "name": "oldpeak", "required": true}, {"type": "long", "name":
+    "slope", "required": true}, {"type": "long", "name": "ca", "required": true},
+    {"type": "long", "name": "thal", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-06-18 14:20:43.491734'

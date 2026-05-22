@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/Pongo/Downloads/subs-akhi/Membangun_model/mlruns/0/fd5e0df4d05546dfbd699d27ae42449c/artifacts
+end_time: 1749820083811
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fd5e0df4d05546dfbd699d27ae42449c
+run_name: gaudy-fawn-987
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749820078228
+status: 3
+tags: []
+user_id: Pongo
